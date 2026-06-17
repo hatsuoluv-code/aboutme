@@ -174,38 +174,37 @@ p {
 /* ========================================== */
 @media (max-width: 768px) {
     .flex-section {
-        flex-direction: column;
-        /* Выстраиваем текст и фото друг под другом */
-        text-align: center;
-        /* Центрируем текст на мобилке */
-        gap: 20px;
-        padding: 20px;
-        margin: 15px 10px;
-        height: auto;
-        /* ИСПРАВЛЕНИЕ: Рамка больше не будет растягиваться вниз */
+        flex-direction: column !important;
+        /* Строго друг под другом */
+        text-align: center !important;
+        gap: 20px !important;
+        padding: 20px !important;
+        margin: 15px 10px !important;
+        height: auto !important;
+        /* ЖЕСТКИЙ СБРОС: высота только по размеру контента */
+        max-height: none !important;
     }
 
     .text-block {
-        max-width: 100%;
-        width: 100%;
-        /* Занимает всю ширину */
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
     .section-img {
-        max-width: 100%;
-        width: 100%;
-        /* Картинка подстроится под ширину экрана */
-        height: auto;
-        /* Высота рассчитается автоматически по пропорциям */
-        object-fit: contain;
-        /* Защищает от деформации */
-        align-self: center;
-        /* Центрирует фото */
-        border-radius: 10px;
+        max-width: 100% !important;
+        width: auto !important;
+        /* Картинка не будет растягиваться шире своего реального размера */
+        max-height: 300px !important;
+        /* Ограничиваем максимальную высоту фото на телефоне */
+        height: auto !important;
+        /* Пропорции рассчитываются автоматически */
+        object-fit: contain !important;
+        align-self: center !important;
+        border-radius: 10px !important;
     }
 
     .header-section h1 {
-        font-size: 32px;
-        /* Уменьшаем имя, чтобы влезало в экран */
+        font-size: 32px !important;
     }
 }
